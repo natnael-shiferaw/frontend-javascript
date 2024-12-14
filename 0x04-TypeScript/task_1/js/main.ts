@@ -32,3 +32,14 @@ const director1: Directors = {
     numberOfReports: 17,
 };
 console.log(director1);
+
+// Interface for a function that prints teacher's fullname
+interface printTeacherFunction {
+    (firsName: string, lastName: string) : string;
+}
+
+// example of the usage of printTeacherFunction interface
+const printTeacher: printTeacherFunction = (firsName, lastName) => {
+    return `${firsName[0]}. ${lastName}`;
+}
+console.log(printTeacher("John", "Doe")); // output: J. Doe
