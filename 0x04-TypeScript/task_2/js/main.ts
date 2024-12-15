@@ -65,3 +65,17 @@ function executeWork(employee: DirectorInterface | TeacherInterface) : string {
 }
 console.log(executeWork(createEmployee(200)));  // Expected: "Getting to work"
 console.log(executeWork(createEmployee(1000))); // Expected: "Getting to director tasks"
+
+// string literal types
+type Subject = "Math" | "History";
+// a function that takes a subject and return a string based on the subject
+function teachClass(todayClass: Subject): string {
+    if (todayClass === "Math") {
+        return "Teaching Math";
+    } else if(todayClass === "History") {
+        return "Teaching History";
+    }
+
+}
+console.log(teachClass("Math"));    // Output: Teaching Math
+console.log(teachClass("History")); // Output: Teaching History
