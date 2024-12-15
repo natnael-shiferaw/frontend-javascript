@@ -48,3 +48,20 @@ function createEmployee(salary: string | number): DirectorInterface | TeacherInt
 console.log(createEmployee(200));   // Teacher
 console.log(createEmployee(1000));  // Director
 console.log(createEmployee('$500')); // Director
+
+// a function that checks if an Employee is a Director
+function isDirector(employee: DirectorInterface | TeacherInterface): boolean {
+    return employee instanceof Director;
+}
+// function that executes a method based on the type of employee
+function executeWork(employee: DirectorInterface | TeacherInterface) : string {
+    if(employee instanceof Director) {
+        return employee.workDirectorTasks();
+    }
+    else if (employee instanceof Teacher) {
+        return employee.workTeacherTasks();
+    }
+    return '';
+}
+console.log(executeWork(createEmployee(200)));  // Expected: "Getting to work"
+console.log(executeWork(createEmployee(1000))); // Expected: "Getting to director tasks"
